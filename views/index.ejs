@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title.title1 %></h1>
+    <p>Nhiệt độ bây giờ đang là <%= title.title1 %>
+    </p>
+    <h2><%= title.title2 %></h2>
+    <p>Độ ẩm bây giờ đang là <%= title.title2 %>
+    </p>
+    <h3><%= title.title3 %></h3>
+    <p>Chỉ số không khí bây giờ đang là <%= title.title3 %>
+    </p>
+  </body>
+
+  <figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Nhiệt Độ
+    </p>
+    <did id="container2"></did>
+    <p class="highcharts-description">
+        Độ ẩm
+    </p>
+    <did id="container3"></did>
+    <p class="highcharts-description">
+        Chỉ số AQI (Chất lượng không khí)
+    </p>
+  </figure>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src = "./javascripts/chart.js" ></script>
+  <script>
+    var temperature = <%= title.title1 %>
+    var humidity = <%= title.title2 %>
+    var aqi_number = <%= title.title3 %>
+    $(document).ready(function(){
+    speedometerTemperature(temperature, 'container');
+    speedometerHumidity(humidity, 'container2');
+    speedometerAQI(aqi_number, 'container3')
+    }) ;
+    
+  </script>
+
+
+  
+</html>
